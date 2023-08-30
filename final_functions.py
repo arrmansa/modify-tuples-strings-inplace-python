@@ -49,16 +49,18 @@ class modify_float:
         cls.memmove(id(old) + cls.offset, new_data, len(new_data))
         return old
 
-my_tuple = (1, 2, 3)
-print(my_tuple, id(my_tuple))
-modify_tuple(my_tuple, 1, "hello")
-print(my_tuple, id(my_tuple), (1, 2, 3), (*range(1,4),))
-
-my_string = "very cool python code"
-print(my_string, id(my_tuple))
-modify_string(my_string, 10, "ctype stuff")
-print(my_string, id(my_tuple), "very cool python code", "a " + "very cool python code")
-
-my_float = 1.1
-modify_float(my_float, 0.1)
-print(my_float, 1.1, my_float + 0.5, 1.1 + 0.5)
+if __name__ == "__main__":
+    
+    my_tuple = (1, 2, 3)
+    print(my_tuple, id(my_tuple))
+    modify_tuple(my_tuple, 1, "hello")
+    print(my_tuple, id(my_tuple), (1, 2, 3), (*range(1,4),))
+    
+    my_string = "very cool python code"
+    print(my_string, id(my_tuple))
+    modify_string(my_string, 10, "ctype stuff")
+    print(my_string, id(my_tuple), "very cool python code", "a " + "very cool python code")
+    
+    my_float = 1.1
+    modify_float(my_float, 0.1)
+    print(my_float, 1.1, my_float + 0.5, 1.1 + 0.5)
